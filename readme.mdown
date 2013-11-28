@@ -1,6 +1,6 @@
 ![Mollie](http://www.mollie.nl/files/Mollie-Logo-Style-Small.png)
 
-# Mollie iDEAL API [![Build Status](https://travis-ci.org/mollienl/ideal-php.png)](https://travis-ci.org/mollienl/ideal-php) #
+# Mollie iDEAL API [![Build Status](https://travis-ci.org/mollie/ideal-php.png)](https://travis-ci.org/mollie/ideal-php) #
 
 Gebruik iDEAL zonder vaste kosten of procedures. Direct betalingen per iDEAL ontvangen via onze API.
 
@@ -18,12 +18,12 @@ Een voorbeeld van de composer.json om deze API in uw project op te nemen:
 
     {
         "require": {
-            "mollienl/ideal-php": "1.0.x-dev"
+            "mollie/ideal-php": "1.0.x-dev"
         }
     }
 
 
-U kunt ook handmatig [alle bestanden downloaden](https://github.com/mollienl/ideal-php/archive/master.zip) en deze dan zelf aan uw website toevoegen.
+U kunt ook handmatig [alle bestanden downloaden](https://github.com/mollie/ideal-php/archive/master.zip) en deze dan zelf aan uw website toevoegen.
 
 # Hoe werkt de API? #
 
