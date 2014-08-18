@@ -48,19 +48,6 @@ class idealClassTest extends PHPUnit_Framework_TestCase
 </response>
 ';
 
-	protected static $create_payment_bankerror_xml = '<?xml version="1.0"?>
-<response>
-	<order>
-		<transaction_id></transaction_id>
-		<amount></amount>
-		<currency></currency>
-		<URL>https://www.mollie.nl/partners/ideal-bank-failure</URL>
-		<error>true</error>
-		<message>Your iDEAL-payment has not been setup because of a temporary technical error at the bank</message>
-	</order>
-</response>
-';
-
 	protected static $create_payment_mollieerror_xml = '<?xml version="1.0" ?>
 <response>
 	<item type="error">
@@ -175,19 +162,6 @@ class idealClassTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($iDEAL->getBankStatus(), Mollie_iDEAL_Payment::STATUS_SUCCESS);
 	}
 
-	public function testCheckPaymentsReturnsFalseInCaseOfBankError ()
-	{
-		$iDEAL = $this->getMock("Mollie_iDEAL_Payment", array("_sendRequest"), array(1001));
-		$iDEAL->setTestmode(TRUE);
-
-		$iDEAL->expects($this->once())
-			->method("_sendRequest")
-			->with("/xml/ideal/", "a=check&partnerid=1001&transaction_id=09f911029d74e35bd84156c5635688c0&testmode=true")
-			->will($this->returnValue(self::$create_payment_bankerror_xml));
-
-		$iDEAL->checkPayment("09f911029d74e35bd84156c5635688c0");
-	}
-
 	public function testCreatePaymentCanSendProfileKey()
 	{
 		$iDEAL = $this->getMock("Mollie_iDEAL_Payment", array("_sendRequest"), array(1001));
@@ -280,33 +254,6 @@ class idealClassTest extends PHPUnit_Framework_TestCase
 		$xml = new SimpleXMLElement(self::$banks_xml);
 
 		$this->assertFalse($method->invokeArgs($iDEAL, array($xml)));	}
-
-	public function testBankErrorDetectedCorrectly()
-	{
-		if (version_compare(phpversion(), "5.3", "<"))
-		{
-			$this->markTestSkipped("Requires PHP 5.3");
-		}
-
-		$method = new ReflectionMethod("Mollie_iDEAL_Payment::_XMLisError");
-		$method->setAccessible(TRUE);
-
-		$iDEAL = new Mollie_iDEAL_Payment(1001);
-
-		$xml = new SimpleXMLElement("<?xml version=\"1.0\" ?>
-		<response>
-			<order>
-				<transaction_id></transaction_id>
-				<amount></amount>
-				<currency></currency>
-				<URL>https://www.mollie.nl/partners/ideal-bank-failure</URL>
-				<error>true</error>
-				<message>Your iDEAL-payment has not been setup because of a temporary technical error at the bank</message>
-			</order>
-		</response>");
-
-		$this->assertTrue($method->invokeArgs($iDEAL, array($xml)));
-	}
 
 	public function testInvalidXmlDetected ()
 	{
