@@ -1,5 +1,11 @@
 ![Mollie](http://www.mollie.nl/files/Mollie-Logo-Style-Small.png)
 
+# Let op #
+
+Deze module wordt niet meer onderhouden, ook kan er geen ondersteuning meer worden geboden indien de module niet juist werkt.
+
+Onze excuses voor het ongemak.
+
 # Mollie iDEAL API [![Build Status](https://travis-ci.org/mollie/ideal-php.png)](https://travis-ci.org/mollie/ideal-php) #
 
 Gebruik iDEAL zonder vaste kosten of procedures. Direct betalingen per iDEAL ontvangen via onze API.
