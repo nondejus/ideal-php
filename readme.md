@@ -75,5 +75,3 @@ T: +31 20 - 612 88 55
 
 + [Meer informatie over iDEAL via Mollie](https://www.mollie.nl/betaaldiensten/ideal/)
 + [Meer informatie over de iDEAL API van Mollie](https://www.mollie.nl/support/documentatie/betaaldiensten/ideal/)
-
-![Powerd By Mollie](http://www.mollie.nl/images/badge-betaling-medium.png)
