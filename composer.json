@@ -1,8 +1,9 @@
 {
     "name": "mollie/ideal-php",
-    "description": "Mollie iDEAL module voor PHP",
+    "description": "Mollie iDEAL module for PHP",
+    "abandoned": "mollie/mollie-api-php",
 	"license": "BSD-2-Clause",
-	"homepage": "https://www.mollie.nl/",
+	"homepage": "https://www.mollie.com/",
     "autoload": {
         "classmap": ["Mollie/"]
     },
@@ -12,6 +13,6 @@
         }
     },
 	"support": {
-		"email": "info@mollie.nl"
+		"email": "info@mollie.com"
 	}
 }

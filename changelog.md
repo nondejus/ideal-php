@@ -2,6 +2,10 @@
 
 # Changelog #
 
+## Wijzigingen in versie 1.19 ##
++ Duidelijker vermeld dat deze module is vervangen door
+  [mollie/mollie-api-php](https://www.github.com/mollie/mollie-api-php).
+
 ## Wijzigingen in versie 1.18 ##
 + Minimumbedrag in examples/prepare.php aangepast.
 + Verbeter compatibiliteit met iDEAL 3.3.
